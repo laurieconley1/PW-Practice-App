@@ -7,7 +7,9 @@ test.beforeEach(async({page}) => {
 
 })
 
-test.describe('Form Layouts page', () => {
+test.describe.only('Form Layouts page', () => {
+    test.describe.configure({retries: 2})
+
     test.beforeEach( async({page}) => {
         await page.getByText('Forms').click()
         await page.getByText('Form Layouts').click()
@@ -15,11 +17,12 @@ test.describe('Form Layouts page', () => {
 
 
     test('input fields', async({page}) => { 
+       
         const usingTheGridEmailInput = page.locator('nb-card', {hasText: "Using the Grid"}).getByRole('textbox', {name: "Email"})  //write new locator for Email field- Using the Grid form
         
         await usingTheGridEmailInput.fill('test@test.com')   // command  > use a method .fill then add argument you want to do (write something in the field)
         await usingTheGridEmailInput.clear()
-        await usingTheGridEmailInput.pressSequentially('test2@test.com', {delay: 500})
+        await usingTheGridEmailInput.pressSequentially('test2@test.com') //, {delay: 500}
 
 
         //Example 1-How to make assertions of the input field

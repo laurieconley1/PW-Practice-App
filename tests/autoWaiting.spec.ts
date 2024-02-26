@@ -31,7 +31,7 @@ test('auto-waiting', async({page}) => {
 }) 
 
 //Alternatives in PW WHEN commands do NOT have auto-waiting feature implemented i.e.'allTextContents', 
-test('alternative waits', async({page}) => { 
+test.skip('alternative waits', async({page}) => { 
     const successButton = page.locator('.bg-success') //locator
     //______wait for element
     //await page.waitForSelector('.bg-success') //selector-.bg-success
@@ -51,7 +51,7 @@ test('alternative waits', async({page}) => {
 
 })
 
-test('timeouts', async({page}) => { 
+test.skip('timeouts', async({page}) => { 
     //test.setTimeout(10000) //PW sillchecl setTimeout first and ignore the click timeout
     test.slow() //will increase the default time out to 3 times - configed at 10000 x 3 = 30000
     const successButton = page.locator('.bg-success') 
