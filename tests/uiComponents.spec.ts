@@ -1,20 +1,21 @@
 import { EmailValidator } from '@angular/forms'
 import {test, expect} from'@playwright/test' 
-import { circle } from 'leaflet'
+
+//test.describe.configure({mode:'parallel'}) 
 
 test.beforeEach(async({page}) => {
-    await page.goto('http://localhost:4200/') 
+    await page.goto('/') 
 
 })
 
-test.describe.only('Form Layouts page', () => {
+test.describe('Form Layouts page', () => {
     test.describe.configure({retries: 2})
+    //test.describe.configure({mode: 'serial'})
 
     test.beforeEach( async({page}) => {
         await page.getByText('Forms').click()
         await page.getByText('Form Layouts').click()
     })
-
 
     test('input fields', async({page}) => { 
        
@@ -36,8 +37,6 @@ test.describe.only('Form Layouts page', () => {
     })
 
     //to select Radio buttons (.getByLabel or .getByRole)
-
-    
     test('radio buttons', async({page}) => { 
         //example to select-need a locator  .getByLabel
         const usingTheGridForm = page.locator('nb-card', {hasText: "Using the Grid"})

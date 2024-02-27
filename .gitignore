@@ -44,6 +44,7 @@ Thumbs.db
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+.env
 
 /.angular/
 /node_modules/

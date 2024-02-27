@@ -1,8 +1,8 @@
-import {test, expect} from'@playwright/test' 
+import {expect} from'@playwright/test' 
+import {test} from '../test-options'
 
-
-test('drag and drop with iframe', async({page}) => { 
-    await page.goto('https://www.globalsqa.com/demo-site/draganddrop/')
+test('drag and drop with iframe', async({page, globalsQaURL}) => { 
+    await page.goto(globalsQaURL)
 
     const frame = page.frameLocator('[rel-title="Photo Manager"] iframe') //key to get access to web element inside of the iframe
     // await frame.locator('li', {hasText:"High Tatras 2"}).click()  //    //need to call the dot locator frame, click does not do an action here 
