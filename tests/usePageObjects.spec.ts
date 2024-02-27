@@ -24,13 +24,13 @@ test('parametrized methods', async({page}) => {
 
     await pm.navigateTo().formLayoutsPage()
     await pm.onFormLayoutsPage().submitUsingTheGridFormWithCredentialsAndSelectOption(process.env.USERNAME, process.env.PASSWORD, 'Option 2')
-    await page.screenshot({path: 'screenshots/formsLayoutsPage.png'})   //screenshot-create a new folder
-    const buffer = await page.screenshot()                              //save as binary image
-    console.log(buffer.toString('base64'))  //print screenshot binary string
+    // await page.screenshot({path: 'screenshots/formsLayoutsPage.png'})   //screenshot-create a new folder
+    // const buffer = await page.screenshot()                              //save as binary image
+    // console.log(buffer.toString('base64'))  //print screenshot binary string
 
     await pm.onFormLayoutsPage().submitInlineFormWithNameEmailAndCheckbox(randomFullName, randomEmail, false)
-    await page.locator('nb-card', {hasText: "Inline form"}).screenshot({path: 'screenshots/inlineForm.png'})
-    await pm.navigateTo().datepickerPage() 
-    await pm.onDatepickerPage().selectCommonDatePickerDateFromToday(10)
-    await pm.onDatepickerPage().selectDatepickerWithRangeFromToday(6, 15)   
+    // await page.locator('nb-card', {hasText: "Inline form"}).screenshot({path: 'screenshots/inlineForm.png'})
+    // await pm.navigateTo().datepickerPage() 
+    // await pm.onDatepickerPage().selectCommonDatePickerDateFromToday(10)
+    // await pm.onDatepickerPage().selectDatepickerWithRangeFromToday(6, 15)   
 })

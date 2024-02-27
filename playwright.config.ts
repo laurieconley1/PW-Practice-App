@@ -14,7 +14,6 @@ export default defineConfig<TestOptions>({
   reporter: 'html',
   
   use: {
-    //baseURL: 'http://localhost:4200/', //'http://127.0.0.1:3000',
     globalsQaURL: 'https://www.globalsqa.com/demo-site/draganddrop/', 
     baseURL: process.env.DEV === '1' ? 'http://localhost:4201/'
           : process.env.STAGING == '1' ? 'http://localhost:4202/'
@@ -50,12 +49,12 @@ export default defineConfig<TestOptions>({
         }
       }
     },
-    {
-      name: 'pageObjectFullScreen',
-      testMatch: 'usePageObjects.spec.ts',
-      use: {
-        viewport: {width: 1920, height: 1080}
-      }
-    }
+    // {
+    //   name: 'pageObjectFullScreen',
+    //   testMatch: 'usePageObjects.spec.ts',
+    //   use: {
+    //     viewport: {width: 1920, height: 1080}
+    //   }
+    // }
   ]
 });
